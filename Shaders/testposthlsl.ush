@@ -1,0 +1,3 @@
+
+float4 retColor = Color*2.0f;
+return float4(retColor.x, retColor.y, retColor.z, 1);
