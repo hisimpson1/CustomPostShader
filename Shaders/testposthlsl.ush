@@ -1,3 +1,12 @@
 
-float4 retColor = Color*2.0f;
+float4 retColor = Color;
+if(Stencil.r != 10)
+{
+	retColor = Color*2.0f;
+}
+else
+{
+	retColor.x = 1.0f;
+}
+
 return float4(retColor.x, retColor.y, retColor.z, 1);
