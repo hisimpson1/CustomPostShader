@@ -42,7 +42,7 @@ void ATestPostEffect::Tick(float DeltaTime)
 
 void ATestPostEffect::AddPostEffect()
 {
-	if (PostMatInst == nullptr)
+	if (PostMat == nullptr)
 		return;
 
 	TArray<AActor*> Actors;
@@ -53,7 +53,7 @@ void ATestPostEffect::AddPostEffect()
 		APostProcessVolume* PostProcess = Cast<APostProcessVolume>(Actors[0]);
 		if (PostProcess)
 		{
-			PostDynamicMat = UKismetMaterialLibrary::CreateDynamicMaterialInstance(GetWorld(), PostMatInst);
+			PostDynamicMat = UKismetMaterialLibrary::CreateDynamicMaterialInstance(GetWorld(), PostMat);
 			FPostProcessSettings& PostProcessSettings = PostProcess->Settings;
 			FWeightedBlendable WeightedBlendable;
 			WeightedBlendable.Object = PostDynamicMat;
@@ -67,7 +67,7 @@ void ATestPostEffect::AddPostEffect()
 
 void ATestPostEffect::RemovePostEffect()
 {
-	if (PostMatInst == nullptr)
+	if (PostMat == nullptr)
 		return;
 
 	APostProcessVolume* PostProcess = PostProcessPtr.Get();

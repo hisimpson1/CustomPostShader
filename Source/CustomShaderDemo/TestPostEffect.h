@@ -30,7 +30,7 @@ private:
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowprivateAccess = "true"))
 	//class UMaterialInstance* PostMatInst;
-	class UMaterial* PostMatInst;
+	class UMaterial* PostMat;
 	UPROPERTY()
 	class UMaterialInstanceDynamic* PostDynamicMat;
 
